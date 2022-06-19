@@ -1,4 +1,4 @@
-let a = (a, b) => {
-  console.log(a + b);
-};
-a(5, 6);
+export function test(a, b) {
+    return a + b;
+}
+

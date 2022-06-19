@@ -6,9 +6,10 @@
 # Node
 node_modules
 
-# Dist & test
+# Dist & test & coverage
 test
 dist
+coverage
 
 # BD, logs
 *.log

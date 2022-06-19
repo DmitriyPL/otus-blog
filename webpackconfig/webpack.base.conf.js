@@ -31,7 +31,7 @@ module.exports = {
     clean: true,
     environment: {
       arrowFunction: false,
-    },
+    },    
   },
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
@@ -71,7 +71,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/i,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]",
+          name: "[hash].[ext]",
         },
       },
 
@@ -99,8 +99,6 @@ module.exports = {
   },
 
   plugins: [
-    new MiniCssExtractPlugin(),
-
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
@@ -108,11 +106,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-        {
-          from: `${PATHS.src}/${PATHS.assets}fonts`,
-          to: `${PATHS.assets}fonts`,
-        },
-        { from: `${PATHS.src}/static`, to: "" },
+        { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts`},
+        { from: `${PATHS.src}/static`, to: "static" },
       ],
     }),
 

@@ -4,5 +4,5 @@ import "./js/main";
 // SCSS
 import "./assets/scss/main.scss";
 
-// CSS (example)
+// CSS
 import "./assets/css/main.css";

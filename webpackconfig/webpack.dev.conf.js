@@ -3,11 +3,9 @@ const { merge } = require("webpack-merge");
 const baseWebpackConfig = require("./webpack.base.conf");
 
 const devWebpackConfig = merge(baseWebpackConfig, {
-  // DEV config
   mode: "development",
   devtool: "eval-source-map",
   devServer: {
-    // contentBase: baseWebpackConfig.externals.paths.dist,
     port: 8081,
     watchFiles: ["*.html"],
     compress: true,
@@ -19,6 +17,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   ],
 });
 
+// eslint-disable-next-line
 module.exports = new Promise((resolve, reject) => {
   resolve(devWebpackConfig);
 });

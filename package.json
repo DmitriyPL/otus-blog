@@ -25,16 +25,6 @@
   "bugs": {
     "url": "https://github.com/DmitriyPL/otus-blog/issues"
   },
-  "keywords": [
-    "webpack",
-    "webpack4",
-    "merge",
-    "bable",
-    "bable7",
-    "scss",
-    "pug",
-    "vue"
-  ],
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.18.5",

@@ -6,7 +6,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   mode: "development",
   devtool: "eval-source-map",
   devServer: {
-    port: 8081,
+    port: 9000,
     watchFiles: ["*.html"],
     compress: true,
   },

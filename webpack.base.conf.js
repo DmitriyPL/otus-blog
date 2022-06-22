@@ -6,8 +6,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const PATHS = {
-  src: path.join(__dirname, "../src"),
-  dist: path.join(__dirname, "../dist"),
+  src: path.resolve(__dirname, "src"),
+  dist: path.resolve(__dirname, "dist"),
   assets: "assets/",
 };
 
@@ -20,14 +20,10 @@ module.exports = {
   externals: {
     paths: PATHS,
   },
-  entry: {
-    main: PATHS.src,
-    // module: `${PATHS.src}/your-module.js`,
-  },
+  entry: PATHS.src,
   output: {
-    filename: `[name].js`,
+    filename: "main.js",
     path: PATHS.dist,
-    publicPath: "/",
     clean: true,
     environment: {
       arrowFunction: false,
@@ -35,16 +31,6 @@ module.exports = {
   },
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          name: "vendors",
-          test: /node_modules/,
-          chunks: "all",
-          enforce: true,
-        },
-      },
-    },
   },
   module: {
     rules: [
@@ -77,17 +63,12 @@ module.exports = {
 
       {
         test: /\.scss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
 
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },
@@ -106,7 +87,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-        { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+        { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts`, },
         { from: `${PATHS.src}/static`, to: "static" },
       ],
     }),

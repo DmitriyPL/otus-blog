@@ -5,6 +5,6 @@ import { test } from "./js/main.js";
 import "./assets/scss/main.scss";
 
 // CSS
-import "./assets/css/main.css";
+import "./assets/css/normalize.css";
 
 test(5, 6);

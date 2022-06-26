@@ -36,20 +36,20 @@ section {
 
 .main-nav {
   background-color: black;
-  box-shadow: 0 0 25px 0 black;    
+  box-shadow: 0 0 25px 0 black;
 
   .main-nav__menu {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 
     .main-nav__menu-item {
       list-style-type: none;
       margin: rem(20);
-      
+
       .main-nav__menu-item-link {
         color: white;
-        text-decoration: none;  
+        text-decoration: none;
       }
     }
   }
@@ -60,7 +60,6 @@ section {
 }
 
 .form-wrapper {
-
   display: inline-block;
 
   .form {
@@ -81,7 +80,6 @@ section {
     }
   }
 }
-
 
 // *,
 // *:before,
@@ -156,4 +154,3 @@ section {
 
 // // Modules
 // // @import "modules/my-module.scss";
-

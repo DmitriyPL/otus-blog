@@ -1,0 +1,20 @@
+extends ../layout/main
+
+//- block variables
+//-   - var title = 'My blog';
+
+block content
+  section
+      .form-wrapper
+        form.form
+            .form__item
+              label.form__item-label Имя * 
+              input.form__item-input(type='text' name='username' required='')
+            .form__item
+              label.form__item-label Номер телефона (с кодом) *
+              input.form__item-input(type='text' name='usernumber' required='')
+            .form__item
+              label.form__item-label Сообщение
+              input.form__item-input(type='text' name='question')
+            .form__item
+              button(alt="Отправить").form__item-button Отправить заявку

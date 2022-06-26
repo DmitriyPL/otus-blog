@@ -12,7 +12,9 @@ html(lang='en')
     include _head
 
   body
-    +header
-    block content
-    +footer
-    include _scripts
+    main
+      +header
+      .content-wrapper
+        block content
+      +footer
+      include _scripts

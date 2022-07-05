@@ -7,7 +7,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devtool: "eval-source-map",
   devServer: {
     port: 9000,
-    watchFiles: ["*.html"],
+    watchFiles: ["*.pug"],
     compress: true,
   },
   plugins: [

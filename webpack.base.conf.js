@@ -20,9 +20,12 @@ module.exports = {
   externals: {
     paths: PATHS,
   },
-  entry: PATHS.src,
+  entry: {
+    main: PATHS.src,
+    slider: PATHS.src + "/js/slider.js",
+  }, 
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: PATHS.dist,
     clean: true,
     environment: {
@@ -45,21 +48,21 @@ module.exports = {
         exclude: "/node_modules/",
       },
 
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
-        },
-      },
+      // {
+      //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+      //   loader: "file-loader",
+      //   options: {
+      //     name: "[name].[ext]",
+      //   },
+      // },
 
-      {
-        test: /\.(png|jpg|gif|svg)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[hash].[ext]",
-        },
-      },
+      // {
+      //   test: /\.(png|jpg|gif|svg)$/i,
+      //   loader: "file-loader",
+      //   options: {
+      //     name: "[hash].[ext]",
+      //   },
+      // },
 
       {
         test: /\.scss$/i,
@@ -92,12 +95,28 @@ module.exports = {
       ],
     }),
 
-    ...PAGES.map(
-      (page) =>
-        new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/, ".html")}`,
-        })
-    ),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/index.pug`,
+      filename: "./index.html",
+      chunks: ['main'],
+    }),
+
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/feedback.pug`,
+      filename: "./feedback.html",
+      chunks: ['main'],
+    }),
+    
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/record.pug`,
+      filename: "./record.html",
+      chunks: ['main'],
+    }),
+
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/records.pug`,
+      filename: "./records.html",
+      chunks: ['main', 'slider'],
+    }),    
   ],
 };

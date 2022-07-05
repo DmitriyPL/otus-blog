@@ -1,7 +1,7 @@
 extends ../layout/main
 
-//- block variables
-//-   - var title = 'My blog';
+block variables
+  - var urlList=["https://picsum.photos/300/300?grayscale", "https://picsum.photos/300/300?grayscale", "https://picsum.photos/300/300?grayscale"]
 
 block content
   section
@@ -9,3 +9,4 @@ block content
     +record('Запись №2', 'record.html', 'Статья про мотоциклы')
     +record('Запись №3', 'record.html', 'Статья про JS')
     +record('Запись №4', 'record.html', 'Статья про Элвиса')
+    +carousel(urlList)

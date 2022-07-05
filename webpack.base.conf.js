@@ -48,21 +48,21 @@ module.exports = {
         exclude: "/node_modules/",
       },
 
-      // {
-      //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
-      //   loader: "file-loader",
-      //   options: {
-      //     name: "[name].[ext]",
-      //   },
-      // },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]",
+        },
+      },
 
-      // {
-      //   test: /\.(png|jpg|gif|svg)$/i,
-      //   loader: "file-loader",
-      //   options: {
-      //     name: "[hash].[ext]",
-      //   },
-      // },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        loader: "file-loader",
+        options: {
+          name: "[hash].[ext]",
+        },
+      },
 
       {
         test: /\.scss$/i,

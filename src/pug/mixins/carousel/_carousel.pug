@@ -1,8 +1,8 @@
 mixin carousel(urlList)
     .carousel-pl
         .carousel-pl__inner    
-            a.carousel-pl__control-prev(role='button')
-                span.carousel-pl__control-prev-icon Previous
+            button.carousel-pl__control-button.prev
+                img.carousel-pl__control-icon(src="/assets/img/icon-left.png")
             each url, index in urlList
                 if index == 0
                     .carousel-pl__item.carousel-pl__active
@@ -10,6 +10,6 @@ mixin carousel(urlList)
                 else
                     .carousel-pl__item
                         img(src=url alt=`${index+1} slide`)
-            a.carousel-pl__control-next(role='button')
-                span.carousel-pl__control-next-icon Next
+            button.carousel-pl__control-button.next
+                img.carousel-pl__control-icon(src="/assets/img/icon-right.png")
         

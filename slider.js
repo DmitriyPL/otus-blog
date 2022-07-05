@@ -1,0 +1,1 @@
+console.log("This is slider - only fo this page"),document.querySelector(".carousel-pl__inner").querySelectorAll(".carousel-pl__item");

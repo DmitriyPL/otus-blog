@@ -1,7 +1,3 @@
-function slider() {
-  initialize();
-}
-
 function onSliderClick() {
   const isActive = "carousel-pl__active";
   const carouselEl = document.querySelector(".carousel-pl__inner");
@@ -38,11 +34,11 @@ function getIndex(currentInd, length) {
   return index;
 }
 
-function initialize() {
+function sliderInit() {
   const elements = document.querySelectorAll(".carousel-pl__control-button");
   elements.forEach((element) => {
     element.addEventListener("click", onSliderClick);
   });
 }
 
-slider();
+sliderInit();

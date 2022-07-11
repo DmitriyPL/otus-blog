@@ -1,12 +1,10 @@
 extends ../layout/main
 
-block variables
-  - var urlList=["./assets/img/40-300x300-grayscale.jpg", "./assets/img/63-300x300-grayscale.jpg", "./assets/img/972-300x300-grayscale.jpg"]
-
 block content
   section
     +record('Запись №1', 'record.html', 'Статья про ежиков')
     +record('Запись №2', 'record.html', 'Статья про мотоциклы')
     +record('Запись №3', 'record.html', 'Статья про JS')
     +record('Запись №4', 'record.html', 'Статья про Элвиса')
-    +carousel(urlList)
+    .carousel-pl#sl1
+    .carousel-pl#sl2

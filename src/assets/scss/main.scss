@@ -1,90 +1,66 @@
-@import "utils/libs";
 @import "utils/vars";
 @import "utils/mixins";
-@import "utils/fonts";
-@import "utils/reset";
 
-html {
-  line-height: $mainLineHeight;
-	font-size: $mainFontSize;
-	color: $mainFontColor;
-  height: 100%;
-  @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
-  }
-  @media screen and (max-width: $tableWidth) {
-		font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-		font-size: 14px;
-  }
-}
+// Modules
+@import "modules/carousel.scss";
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: $mainFont;
-	font-size: $mainFontSize;
-  font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: $default-color;
 }
 
-*, *:before, *:after { box-sizing: border-box; }
-
-h1, h2, h3, h4, h5, h6 { margin: 0; }
-
-a { text-decoration: none; }
-
-ul, li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+main {
+  max-width: rem(1280);
+  min-width: rem(480);
+  margin: rem(16) auto;
 }
 
-section, .section {
-  position: relative;
-  padding: 40px 0;
-  @media screen and (max-width: $desktopWidth) {
-    padding: 36px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 28px 0;
-  }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 20px 0;
-  }
+section {
+  text-align: center;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  min-height: 100vh;
+.main-nav {
+  background-color: black;
+  box-shadow: 0 0 25px 0 black;
+
+  .main-nav__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .main-nav__menu-item {
+      list-style-type: none;
+      margin: rem(20);
+
+      .main-nav__menu-item-link {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .content-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  height: 80vh;
 }
 
-.container {
-  width: 100%;
-  flex: 0 0 auto;
-  position: relative;
-  margin: 0 auto;
-  max-width: $desktopWidth;
-  @media screen and (max-width: $smDesktopWidth) {
-    max-width: tableWidth;
-  }
-  @media screen and (max-width: $tableWidth) {
-    max-width: phoneWidth;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    max-width: smPhoneWidth;
+.form-wrapper {
+  display: inline-block;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .form__item {
+      margin-top: rem(20);
+
+      .form__item-input {
+        margin-left: rem(10);
+      }
+
+      .form__item-button {
+        border-radius: rem(10);
+      }
+    }
   }
 }
-
-// Modules
-// @import "modules/my-module.scss";
